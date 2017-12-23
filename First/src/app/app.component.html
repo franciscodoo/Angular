@@ -3,13 +3,20 @@
         <h3>App.Component</h3>
         <hr>
         <!--if selector is set by element we should use somthing like: -->
-        <app-servers></app-servers> 
+        <app-servers></app-servers>
 
         <!--if selector is set by attribute we should use somthing like: 
         <div app-servers></div> -->
 
         <!--if selector is set by class we should use somthing like:
         <div class="app-servers"></div>-->
+
+        <hr>
+        <!-- user -->
+        <label>Username</label>
+        <input type="text" class="form-control" [(ngModel)]="username">
+        <p>{{username}}</p>
+        <button class="btn btn-primary" [disabled]="username === ''" (click)="onResetUsername()">Reset Username</button>
         <hr>
         <warning-alert></warning-alert>
         <success-alert></success-alert>

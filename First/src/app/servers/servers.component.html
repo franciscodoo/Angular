@@ -1,2 +1,17 @@
-<!--S1:<app-server></app-server>
-S2:<app-server></app-server> -->
+<label for="sname">Server Name</label>
+<!-- fired in every key stroke. $event (reserved keyword) ouputs data emited with that event -->
+<!-- <input name="sname" type="text" class ="form-control" (input)="onUpdateServerName($event)">-->
+
+<!-- ...Or with 2 way data binding - combining event with prop binding -->
+<!-- ngModel triggers and updates data automatically -->
+<input name="sname" type="text" class ="form-control" [(ngModel)]="serverName">
+
+<p>{{serverName}}</p>
+
+<!--[...] indicates we're using property binding-->
+<button class="btn btn-primary" [disabled]= "!allowNewServer" 
+    (click)="onCreateServer()"> <!--binding event: instead of the onclick() -->
+    Add Server</button>
+<p>{{serverCreationStatus}}</p>
+
+<app-server></app-server>

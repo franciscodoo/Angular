@@ -7,5 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'First';
-  name = '';
+  //user variables
+  allowResetUsername = false;
+  username = '';
+  
+    //user methods
+    onUpdateUsername(event: Event)
+    {
+      this.username = (<HTMLInputElement>event.target).value;
+      this.allowResetUsername = true;
+    }
+    
+    onResetUsername()
+    {
+      this.username = '';
+    }
 }
