@@ -1,2 +1,12 @@
 <!-- Using string interpolation: Any result that can be resolved into a string -->
-<p>{{'Server'}}<!--Hardcoded string -->  with id {{serverId}} <!-- or var from component.ts--> is {{GetServerStatus()}}<!--or method --></p>
+<!-- ngStyle: built-in attribute directive. [] are not part of the directive :
+        they indicate we want to bind to some prop on this directive and this prop name happens to be also ngStyle -->
+<!-- *** property binding is not the same as a directive. we are binding to a property of the directive *** -->
+<p [ngStyle]="{backgroundColor:GetColor()}">
+    <!--Hardcoded string -->
+    {{'Server'}}
+    <!-- or var from component.ts-->
+    with id {{serverId}}
+    <!--or method -->
+    is {{GetServerStatus()}}
+</p>
