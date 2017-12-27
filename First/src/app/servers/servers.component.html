@@ -20,4 +20,5 @@
 
 <!-- Unlike structural directives, attribute directives don't add or remove elements. only change the element they're placed on -->
 
-<app-server></app-server>
+<!-- ngFor is also a structural directive. 1.create temp var with 'let'; 2. 'of' ~ like in <list> -->
+<app-server *ngFor="let s of servers"></app-server>

@@ -1,8 +1,13 @@
 <!-- Using string interpolation: Any result that can be resolved into a string -->
+
 <!-- ngStyle: built-in attribute directive. [] are not part of the directive :
         they indicate we want to bind to some prop on this directive and this prop name happens to be also ngStyle -->
 <!-- *** property binding is not the same as a directive. we are binding to a property of the directive *** -->
-<p [ngStyle]="{backgroundColor:GetColor()}">
+
+<!-- ngClass allow us to dynamically add or remove css classes -->
+
+<p [ngStyle]="{backgroundColor:GetColor()}"
+    [ngClass] = "{online: serverStatus === 'Online'}"> <!--Only if server is online -->
     <!--Hardcoded string -->
     {{'Server'}}
     <!-- or var from component.ts-->
