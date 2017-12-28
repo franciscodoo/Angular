@@ -21,7 +21,13 @@
         <warning-alert></warning-alert>
         <success-alert></success-alert>
 
+        <!-- <button class="btn btn-primary" (click)="visibleDetails = !visibleDetails">Display Details</button> -->
         <button class="btn btn-primary" (click)="onShowDetails()">Display Details</button>
-        <p>Secret Password: 'CykaBlyat'</p>
+        <p *ngIf="visibleDetails">Secret Password: 'CykaBlyat'</p>
+        <div *ngFor="let l of log" 
+            [ngStyle]="{backgroundColor: l >= 5 ? 'blue':'transparent'}"
+            [ngClass]="{'white-text': l >=5 }"> 
+            {{l}}
+        </div>
     </div>
 </div>

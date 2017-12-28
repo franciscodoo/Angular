@@ -10,6 +10,8 @@ export class AppComponent {
   //user variables
   allowResetUsername = false;
   username = '';
+  visibleDetails = false;
+  log = [];
   
     //user methods
     onUpdateUsername(event: Event)
@@ -21,5 +23,11 @@ export class AppComponent {
     onResetUsername()
     {
       this.username = '';
+    }
+
+    onShowDetails()
+    {
+      this.visibleDetails = !this.visibleDetails;
+      this.log.push(this.log.length+1)
     }
 }
