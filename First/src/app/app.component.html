@@ -23,10 +23,11 @@
 
         <!-- <button class="btn btn-primary" (click)="visibleDetails = !visibleDetails">Display Details</button> -->
         <button class="btn btn-primary" (click)="onShowDetails()">Display Details</button>
-        <p *ngIf="visibleDetails">Secret Password: 'CykaBlyat'</p>
-        <div *ngFor="let l of log" 
-            [ngStyle]="{backgroundColor: l >= 5 ? 'blue':'transparent'}"
-            [ngClass]="{'white-text': l >=5 }"> 
+        <p *ngIf="visibleDetails">Secret Password: CykaBlyat</p>
+        <div 
+            *ngFor="let l of log; let i = index" 
+            [ngStyle]="{backgroundColor: i >= 4 ? 'blue':'transparent'}"
+            [ngClass]="{'white-text': i >=4 }"> 
             {{l}}
         </div>
     </div>
